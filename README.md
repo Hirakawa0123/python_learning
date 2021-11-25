@@ -9,10 +9,7 @@ pythonを学習しているので知識定着のため、Git、qiitaに情報を
 pip install python
 ```
  
-# Usage
- 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
- 
+# Usage 
 ```bash
 git clone https://github.com/Hirakawa0123/python_learning.git
 cd data_structure
