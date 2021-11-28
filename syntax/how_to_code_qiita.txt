@@ -1,0 +1,128 @@
+#はじめに
+動くコードは書けるが、基礎となる部分が曖昧だったのでまとめることにしました。
+Python 3.8.2
+
+#ステートメントの区切り
+ステートメントとは命令文の構成単位
+
+Pythonのステートメントの区切りは、セミコロン「;」もしくは改行
+
+```python:how_to_code.py:how_to_code.py
+a = 10; b =20; c = a + b
+print(c)
+
+a = 30
+b =40
+c = a + b
+print(c)
+```
+
+#ステートメントの改行
+折り返す際は「\」を入力
+
+```python:how_to_code.py
+a = 1 + 2 + 3 + 4 + 5 \
+    + 6 + 7 + 8 + 9 + 10
+print(a)
+```
+
+#コメントアウトの書き方
+すでにコメントアウトしてきたが、「#」を書くとコメントアウトすることができる
+複数行コメントアウトする際は以下のように記載する
+
+```python:how_to_code.py
+#一行のコメントアウト
+
+"""
+複数行の
+コメントアウトの
+書き方
+"""
+```
+
+#変数 大文字と小文字
+出力するとそれぞれ別の値が入っていることが確認できる
+
+```python:how_to_code.py
+a = 1
+A = 10
+print(a)
+print(A)
+```
+
+#値の区切り文字、改行指定
+sepで区切り文字を指定、endで行末文字を指定する
+
+```python:how_to_code.py
+a = 1
+b = 2
+c = 3
+ans = a + b + c
+
+print(a,b,c)
+print(ans)
+
+print(a,b,c, sep = "、")
+print(ans)
+
+print(a,b,c, sep = "!", end = "end")
+print(ans)
+```
+
+実行結果
+
+```
+1 2 3
+6
+1、2、3
+6
+1!2!3end6
+```
+
+#endを更に詳しく
+endを何も指定しない場合は、自動的に改行される
+改行を明示的に書く場合は、「end = "\n"」とする
+
+```python:how_to_code.py
+l = ["This","is","a","pen"]
+
+for word in l:
+    print(word)
+
+for word in l:
+    print(word,end = "\n")
+```
+
+出力結果
+
+```
+This
+is
+a
+pen
+This
+is
+a
+pen
+```
+
+「end = ""」と指定すると改行なしで表示される
+「end = "　"」と指定すると改行の代わりにスペースで表示される
+「end = "！"」と指定すると改行の代わりに!で表示される
+
+```python:how_to_code.py
+for word in l:
+    print(word,end = "")
+
+for word in l:
+    print(word,end = " ")
+
+for word in l:
+    print(word,end = "\t")
+```
+
+実行結果
+
+```
+ThisisapenThis is a pen This    is      a       pen     %
+```
