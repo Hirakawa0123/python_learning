@@ -1,7 +1,7 @@
 #はじめに
 動くコードは書けるが、基礎となる部分が曖昧だったのでまとめることにしました。
 Python 3.8.2
-https://github.com/Hirakawa0123/python_learning/blob/main/syntax/how_to_code.py
+https://github.com/Hirakawa0123/python_learning/blob/main/syntax/how_to_numbers.py
 #整数
 整数とは、-1,0,10などの数
 小数点を含まない数字のこと
