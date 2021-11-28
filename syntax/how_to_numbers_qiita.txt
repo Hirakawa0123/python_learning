@@ -1,0 +1,166 @@
+#はじめに
+動くコードは書けるが、基礎となる部分が曖昧だったのでまとめることにしました。
+Python 3.8.2
+https://github.com/Hirakawa0123/python_learning/blob/main/syntax/how_to_code.py
+#整数
+整数とは、-1,0,10などの数
+小数点を含まない数字のこと
+正の整数は「自然数」という
+
+整数の計算
+
+```python:how_to_numbers.py
+a = 10
+b = 0
+c = -1
+
+ans = a + b + c
+print(ans)
+```
+
+出力結果
+
+```
+9
+```
+
+#浮動小数点
+浮動小数点とは、-49.3,0.1,23.345などの数
+小数点を含む数字のこと
+
+浮動小数点の計算
+
+```python:how_to_numbers.py
+a = 0.1
+b = 23.345
+c = -49.3
+
+ans = a + b + c
+print(ans)
+```
+
+出力結果
+
+```
+-25.854999999999997
+```
+
+#整数と浮動小数点の計算
+整数と浮動小数点の計算は、結果が浮動小数点で表示される
+
+```python:how_to_numbers.py
+a = 10
+b = -49.3
+ans = a + b
+print(ans)
+
+a = 0.9
+b = 0.1
+ans = a + b
+print(ans)
+
+a = 100
+b = 0.1
+ans = a * b
+print(ans)
+```
+出力結果
+
+```
+-39.3
+1.0
+10.0
+```
+#数字を丸める
+
+出力結果の浮動小数点を丸める際は、roundを使用します。
+round(n,2)とするとnを小数点2位に丸めるという意味になります。
+
+roundの動きに関しては公式ドキュメントをチェック
+https://docs.python.org/ja/3/library/functions.html?highlight=round#round
+>
+注釈 浮動小数点数に対する round() の振る舞いは意外なものかもしれません
+: 例えば、 round(2.675, 2) は予想通りの 2.68 ではなく 2.67 を与えます。
+これはバグではありません: これはほとんどの小数が浮動小数点数で正確に表せないことの結果です。
+詳しくは 浮動小数点演算、その問題と制限 を参照してください。
+
+```python:how_to_numbers.py
+n = 3.1415926535
+
+print(n)
+print(round(n))
+print(round(n,2))
+```
+
+出力結果
+
+```
+3.1415926535
+3
+3.14
+````
+
+
+#四捨五入
+:::note warn
+これ以降の内容確認中です。
+間違いやドキュメントのここ読めばわかる等ありましたらコメントいただければ助かります。
+:::
+
+decimalをインポートします。
+正確に四捨五入するには、decimaiにstr型で数字を渡してからroundすること
+※strで渡さないと別の結果になるので注意
+
+```python:how_to_numbers.py
+from decimal import *
+
+num = Decimal("2.675")
+print(type(num))
+print(round(num, 2))
+
+num = Decimal(2.675)
+print(type(num))
+print(round(num, 2))
+
+num = 2.675
+print(type(num))
+print(round(num, 2))
+```
+
+出力結果
+
+```
+<class 'decimal.Decimal'>
+2.68
+<class 'decimal.Decimal'>
+2.67
+<class 'float'>
+2.67
+```
+
+#切り上げ、切り捨て
+mathをインポートします。
+ceilは切り上げ、floorは切り捨て
+
+```python:how_to_numbers.py
+import math
+
+n = 3.1415926535
+n2 = -3.1415926535
+
+print(math.ceil(n))
+print(math.floor(n))
+
+print(math.ceil(n2))
+print(math.floor(n2))
+```
+
+出力結果
+
+```
+4
+3
+-3
+-4
+```
+以上
