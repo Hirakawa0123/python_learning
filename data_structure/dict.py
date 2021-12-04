@@ -37,12 +37,19 @@ d.update(d2)
 print(d)
 
 #要素の確認
-print("#######################")
 d = {"x":1,"y":2,"z":3}
 
 print(d["x"])
 print(d.get("y"))
-print(d)
+
+#辞書に存在しないkeyを指定して要素を確認
+print("##############")
+d = {"x":1,"y":2,"z":3}
+
+print(d.get("nothing"))
+print(d.get("nothing", 0))
+
+#print(d["nothing"])
 
 #keyが辞書に入っているか確認
 d = {"x":1,"y":2,"z":3}

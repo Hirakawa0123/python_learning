@@ -67,10 +67,39 @@ d = {"x":1,"y":2,"z":3}
 print(d["x"])
 print(d.get("y"))
 ```
-
 ```:出力結果
 1
 2
+```
+
+#辞書に存在しない要素の確認
+"nothing"という辞書には無いkeyを指定して要素を確認する
+keyは存在しないので、デフォルトでNoneという値を返す
+デフォルト以外の値を返したい場合は、keyの後に返したい値を指定する
+
+```python:dict.py
+d = {"x":1,"y":2,"z":3}
+
+print(d.get("nothing"))
+print(d.get("nothing", 0))
+```
+```:出力結果
+None
+0
+```
+d[key]の方法で存在しないkeyを指定するとエラーが発生する
+
+```python:dict.py
+d = {"x":1,"y":2,"z":3}
+
+print(d["nothing"])
+```
+
+```:出力結果
+Traceback (most recent call last):
+  File "dict.py", line 52, in <module>
+    print(d["nothing"])
+KeyError: 'nothing'
 ```
 
 #keyが辞書に存在するか確認
@@ -109,7 +138,7 @@ d = {"x":1,"y":2,"z":3}
 del d
 print(d)
 ```
-「del d」を行ってあとに「print(d)]で呼び出しているため、エラーが発生している
+「del d」を行った後に「print(d)]で呼び出しているため、エラーが発生している
 辞書自体が削除されていることが確認できる
 
 ```:出力結果
